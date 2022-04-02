@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Stick+No+Bills:wght@600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .clock {
+            height: 100vh;
+            width: 100vw;
+            background-color: black;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #date {
+            padding: 10px 25px;
+            color: white;
+            font-family: 'Stick No Bills', sans-serif;
+            font-family: 200px;
+            text-shadow: 2px 2px 2px blue, -2px -2px 2px red;
+            border-right: 2px solid red;
+            border-left: 2px solid red;
+            border-top: 2px solid blue;
+            border-radius: 10px 10px 0px 0px;
+            word-spacing: 5px;
+        }
+        
+        #time {
+            text-align: center;
+            border-radius: 10px;
+            padding: 10px 25px;
+            color: white;
+            font-family: 'Stick No Bills', sans-serif;
+            font-size: 60px;
+            text-shadow: 3px 3px 2px blue, -3px -3px 2px red;
+            border-bottom: 2px solid red;
+            border-top: 2px solid blue;
+            border-right: 2px solid white;
+            border-left: 2px solid white;
+            word-spacing: 5px;
+        }
+        </style>
+</head>
+
+<body>
+    <div class="clock">
+        <div id="date"></div>
+        <div id="time"></div>
+    </div>
+    <script>
+        function current_date() {
+            var d = new Date;
+            // console.log(d);
+            let date_division = document.getElementById("date")
+            let time_division = document.getElementById("time")
+            let bar = document.getElementById("bar")
+            // let date = d.getDate();
+            // let month = d.getMonth();
+            // let year = d.getFullYear();
+            // let hours = d.getHours();
+            // let min = d.getMinutes();
+            // let second = d.getSeconds();
+            let finaldate = d.toLocaleDateString()
+            let finalTime = d.toLocaleTimeString()
+            // let meridian = ""
+            // if (hours < 12) {
+            //     meridian += "AM"
+            // }
+            // else {
+            //     meridian += "PM"
+            //     hours = hours - 12
+            // }
+            // switch (month) {
+            //     case 0:
+            //         month = "January";
+            //         break;
+
+            //     case 1:
+            //         month = "February";
+            //         break;
+
+            //     case 2:
+            //         month = "March";
+            //         break;
+
+            //     case 3:
+            //         month = "April";
+            //         break;
+
+            //     case 4:
+            //         month = "May";
+            //         break;
+
+            //     case 5:
+            //         month = "June";
+            //         break;
+
+            //     case 6:
+            //         month = "July";
+            //         break;
+
+            //     case 7:
+            //         month = "August";
+            //         break;
+
+            //     case 8:
+            //         month = "September";
+            //         break;
+
+            //     case 9:
+            //         month = "October";
+            //         break;
+
+            //     case 10:
+            //         month = "November";
+            //         break;
+
+            //     case 11:
+            //         month = "December";
+            //         break;
+            // }
+            // date_division.innerHTML = date + " / " + month + " / " + year;
+            date_division.innerHTML = finaldate;
+            // time_division.innerHTML = hours + " : " + min + " : " + second + "  -  " + meridian;
+            time_division.innerHTML = finalTime;
+        }
+        setInterval(current_date, 1)
+    </script>
+</body>
+
+</html>
